@@ -2,6 +2,7 @@ import axios, { AxiosResponse } from 'axios';
 import jwt from 'jsonwebtoken';
 import { Constants } from './Constants';
 import { IDto } from './IDto';
+import { ITokenPayload } from './ITokenPayload';
 import { ITokenResponse } from './ITokenResponse';
 import { IUserProfile } from './IUserProfile';
 
@@ -44,8 +45,8 @@ export class Auth {
         return false;
     }
 
-    public static validateTokenLocal(token: string, clientSecret: string): string | object {
-        return jwt.verify(token, clientSecret);
+    public static validateTokenLocal(token: string, clientSecret: string): ITokenPayload {
+        return jwt.verify(token, clientSecret) as ITokenPayload;
     }
 
     public static async refreshToken(token: string, clientId: number, clientSecret: string): Promise<string> {
