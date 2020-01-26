@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
+import jwt from 'jsonwebtoken';
 import { Constants } from './Constants';
 import { IDto } from './IDto';
 import { ITokenResponse } from './ITokenResponse';
@@ -32,7 +33,7 @@ export class Auth {
         throw new Error('user profile request failed');
     }
 
-    public async validateToken(token: string): Promise<boolean> {
+    public static async validateToken(token: string): Promise<boolean> {
         let url = `${Constants.AUTH_BASE_URL}/api/auth/token?token=${token}`;
 
         let response = await axios.get<IDto<boolean>, AxiosResponse<IDto<boolean>>>(url);
@@ -43,7 +44,11 @@ export class Auth {
         return false;
     }
 
-    public async refreshToken(token: string, clientId: number, clientSecret: string): Promise<string> {
+    public static validateTokenLocal(token: string, clientSecret: string): string | object {
+        return jwt.verify(token, clientSecret);
+    }
+
+    public static async refreshToken(token: string, clientId: number, clientSecret: string): Promise<string> {
         let url = `${Constants.AUTH_BASE_URL}/api/auth/token?token=${token}&client_id=${clientId}&client_secret=${clientSecret}`;
 
         let response = await axios.post<IDto<boolean>, AxiosResponse<IDto<ITokenResponse>>>(url);
