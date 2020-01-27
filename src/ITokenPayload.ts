@@ -3,5 +3,6 @@ export interface ITokenPayload {
     data: {
         userId: number;
         appId: number;
+        isVerified: boolean;
     };
 }
