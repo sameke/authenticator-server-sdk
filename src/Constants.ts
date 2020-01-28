@@ -1,3 +1,3 @@
 export const Constants = {
-    AUTH_BASE_URL: 'http://auth.sameke.com'
+    AUTH_BASE_URL: 'http://auth.sameke.com/api/auth'
 };
