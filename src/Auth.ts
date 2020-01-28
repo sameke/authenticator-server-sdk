@@ -8,7 +8,7 @@ import { IUserProfile } from './IUserProfile';
 
 export class Auth {
     public static async exchangeCodeForToken(code: string, clientId: number, clientSecret: string): Promise<string> {
-        let url = `${Constants.AUTH_BASE_URL}?client_id=${clientId}&client_secret=${clientSecret}&code=${code}`;
+        let url = `${Constants.AUTH_BASE_URL}/api/auth?client_id=${clientId}&client_secret=${clientSecret}&code=${code}`;
 
         let response = await axios.get<IDto<ITokenResponse>, AxiosResponse<IDto<ITokenResponse>>>(url);
 
