@@ -1,13 +1,12 @@
 {
   "name": "@sameke/authenticator-server-sdk",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "authenticator server sdk for connecting a web application to auth.sameke.com",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "prepare": "npm run build",
-    "prepublishOnly": "gulp -- bump",
     "postpublish": "git add . && git commit -m \"published\" && git push"
   },
   "repository": {
@@ -26,13 +25,11 @@
   },
   "homepage": "https://github.com/sameke/authenticator-server-sdk#readme",
   "devDependencies": {
-    "@types/jsonwebtoken": "^8.3.7",
-    "gulp": "^4.0.2",
-    "gulp-bump": "^3.1.3",
-    "typescript": "^3.7.5"
+    "@types/jsonwebtoken": "9.0.7",
+    "typescript": "5.7.3"
   },
   "dependencies": {
-    "axios": "^0.19.2",
-    "jsonwebtoken": "^8.5.1"
+    "axios": "1.7.9",
+    "jsonwebtoken": "9.0.2"
   }
 }
