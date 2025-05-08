@@ -1,6 +1,6 @@
 {
   "name": "@sameke/authenticator-server-sdk",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "authenticator server sdk for connecting a web application to auth.sameke.com",
   "main": "dist/index.js",
   "scripts": {
@@ -25,11 +25,11 @@
   },
   "homepage": "https://github.com/sameke/authenticator-server-sdk#readme",
   "devDependencies": {
-    "@types/jsonwebtoken": "9.0.7",
+    "@types/jsonwebtoken": "9.0.9",
     "typescript": "5.7.3"
   },
   "dependencies": {
-    "axios": "1.7.9",
+    "axios": "1.9.0",
     "jsonwebtoken": "9.0.2"
   }
 }
